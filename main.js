@@ -32,24 +32,29 @@ function createCardsMarcup(galleryItems) {
  </li>
       `
   }).join('');
-}
-  
+};
+
+
 function onGalleryListClick(e) { 
   e.preventDefault();
   if (e.target.classList.contains('js-gallery')) {
     return;
   }
   onOpenModalClick();
-  openImageInModal.src = e.target.dataset.source;
-  openImageInModal.alt = e.target.alt;
+  updateModalImg(e.target.dataset.source, e.target.alt)
 };
 
 function onOpenModalClick() {
   openModal.classList.add('is-open');
 };
+function updateModalImg(src,alt  ) {
+    openImageInModal.src = src;
+    openImageInModal.alt = alt;
+
+}
  
-function buttonCloseModalClick(src = ``,alt = ``) {
+function buttonCloseModalClick() {
   openModal.classList.remove('is-open');
-  //  openImageInModal.src = ``;
-  // openImageInModal.alt = ``;
+  updateModalImg('','')
 };
+
