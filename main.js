@@ -40,24 +40,16 @@ function onGalleryListClick(e) {
     return;
   }
   onOpenModalClick();
-  onAddModalImage(e);
+  openImageInModal.src = e.target.dataset.source;
+  openImageInModal.alt = e.target.alt;
 };
 
 function onOpenModalClick() {
   openModal.classList.add('is-open');
 };
-
-function onAddModalImage(e) {
-  openImageInModal.src = e.target.dataset.source;
-  openImageInModal.alt = e.target.alt;
-};
  
-function buttonCloseModalClick() {
+function buttonCloseModalClick(src = ``,alt = ``) {
   openModal.classList.remove('is-open');
-  onClearModalImage()
-};
-
- function onClearModalImage() {
-  openImageInModal.src = ``;
-  openImageInModal.alt = ``;
+  //  openImageInModal.src = ``;
+  // openImageInModal.alt = ``;
 };
