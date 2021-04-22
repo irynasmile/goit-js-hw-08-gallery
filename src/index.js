@@ -1,6 +1,20 @@
 
-
 import galleryItems from './gallery-items.js';
+// import './css/styles.scss';
+import sumNumbers from "./app.js";
+
+const num1Input = document.getElementById("num1");
+const num2Input = document.getElementById("num2");
+const btn = document.getElementById("sumBtn");
+const result = document.getElementById("result");
+
+btn.addEventListener("click", e => {
+  const num1 = Number(num1Input.value);
+  const num2 = Number(num2Input.value);
+   result.innerHTML = sumNumbers(num1, num2);
+});
+
+// console.log(sumNumbers(2,3));
 // console.log(galleryItems);
 
 const galleryList = document.querySelector('.gallery');
@@ -52,7 +66,6 @@ function updateModalImg(src,alt  ) {
     openImageInModal.alt = alt;
 
 }
- 
 function buttonCloseModalClick() {
   openModal.classList.remove('is-open');
   updateModalImg('','')
